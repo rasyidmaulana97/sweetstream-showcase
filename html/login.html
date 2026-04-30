@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Log in — Share</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" href="./index.html">Share</a>
+      <nav><a href="./signup.html">Sign up</a></nav>
+    </header>
+
+    <main class="auth">
+      <h1>Log in</h1>
+      <form id="login-form" class="stack">
+        <label>Email <input type="email" name="email" required autocomplete="email" /></label>
+        <label>Password <input type="password" name="password" required autocomplete="current-password" /></label>
+        <button class="btn btn-primary" type="submit">Log in</button>
+        <p class="muted">No account? <a href="./signup.html">Create one</a></p>
+      </form>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
