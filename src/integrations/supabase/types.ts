@@ -14,13 +14,92 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      media: {
+        Row: {
+          created_at: string
+          expires_at: string | null
+          file_path: string
+          id: string
+          is_disabled: boolean
+          kind: string
+          max_views: number | null
+          mime_type: string
+          original_name: string
+          owner_id: string
+          size_bytes: number
+          slug: string
+          view_count: number
+        }
+        Insert: {
+          created_at?: string
+          expires_at?: string | null
+          file_path: string
+          id?: string
+          is_disabled?: boolean
+          kind: string
+          max_views?: number | null
+          mime_type: string
+          original_name: string
+          owner_id: string
+          size_bytes: number
+          slug: string
+          view_count?: number
+        }
+        Update: {
+          created_at?: string
+          expires_at?: string | null
+          file_path?: string
+          id?: string
+          is_disabled?: boolean
+          kind?: string
+          max_views?: number | null
+          mime_type?: string
+          original_name?: string
+          owner_id?: string
+          size_bytes?: number
+          slug?: string
+          view_count?: number
+        }
+        Relationships: []
+      }
+      reports: {
+        Row: {
+          created_at: string
+          details: string | null
+          id: string
+          media_id: string
+          reason: string
+        }
+        Insert: {
+          created_at?: string
+          details?: string | null
+          id?: string
+          media_id: string
+          reason: string
+        }
+        Update: {
+          created_at?: string
+          details?: string | null
+          id?: string
+          media_id?: string
+          reason?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reports_media_id_fkey"
+            columns: ["media_id"]
+            isOneToOne: false
+            referencedRelation: "media"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      increment_media_view: { Args: { p_slug: string }; Returns: undefined }
     }
     Enums: {
       [_ in never]: never
