@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shared media — Share</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" href="./index.html">Share</a>
+    </header>
+
+    <main class="view">
+      <div id="media-host" class="media"></div>
+      <div class="row between">
+        <small id="meta" class="muted"></small>
+        <button id="report" class="btn btn-ghost">Report</button>
+      </div>
+    </main>
+
+    <dialog id="report-dialog">
+      <form method="dialog" class="stack">
+        <h3>Report content</h3>
+        <label>Reason
+          <textarea name="reason" rows="4" required></textarea>
+        </label>
+        <div class="row right">
+          <button value="cancel" class="btn btn-ghost">Cancel</button>
+          <button value="ok" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
